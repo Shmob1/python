@@ -1,0 +1,6 @@
+-c constraints.txt
+bandit>=1.7.*
+black>=22.6.*
+flake8>=4.0.*
+mypy>=v0.971
+pre-commit>=2.20.*

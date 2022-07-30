@@ -1,0 +1,18 @@
+{
+    "python.linting.lintOnSave": true,
+    "python.linting.flake8Enabled": true,
+    "python.linting.enabled": true,
+    "python.formatting.provider": "black",
+    "python.linting.mypyEnabled": true,
+    "python.linting.banditEnabled": true,
+    "python.linting.mypyArgs": ["--show-error-codes","--pretty","--ignore-missing-imports","--show-error-context"],
+    "git.mergeEditor": true,
+	"explorer.fileNesting.patterns": {
+		"dvc.yaml": "dvc.lock",
+		"requirements.txt": "requirements-dev.txt,constraints.txt",
+		".gitignore": ".gitattributes, .gitmodules, .gitmessage, .mailmap, .git-blame*",
+		"Dockerfile": "dockerignore, docker-compose.*, dockerfile*"
+	},
+	"explorer.fileNesting.enabled": true,
+    "editor.formatOnSave": true,
+}
