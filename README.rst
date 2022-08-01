@@ -2,7 +2,7 @@
 PROJECT_NAME
 =============
 
-A Small repo to test the functionality of githooks and github actions
+A project template which includes all setup for a Python 3.10 Data Science project
 
 PROJECT_URL
 
@@ -15,7 +15,7 @@ Requirements
 
 DVC Setup Instructions
 ======================
-Initialise DVC and add GCS remote. If you don't have a bucket contact admins@aiml.team.
+Initialise DVC and add GCS remote.
 
 .. code-block:: bash
 
