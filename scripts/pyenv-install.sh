@@ -41,14 +41,14 @@ function add_to_bashrc {
             return 3;;
     esac
 
-    echo '\n###########################' >> $rc
+    echo "\n###########################" >> $rc
     echo '# pyenv configruation' >> $rc
     echo 'export PYENV_ROOT="$HOME/.pyenv"' >> $rc
     echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> $rc
     echo 'eval "$(pyenv init -)"' >> $rc
     echo '# pyenv-virtualenv configruation' >> $rc
     echo 'eval "$(pyenv virtualenv-init -)"' >> $rc
-    echo '##########################a#' >> $rc
+    echo '###########################' >> $rc
 }
 
 if yn "Do you want to wipe & reinstall pyenv?\n${ORANGE}This will delete all python environments${NC}"; then
