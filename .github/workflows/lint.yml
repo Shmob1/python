@@ -19,7 +19,7 @@ jobs:
       - name: black
         run: black --check githooks setup.py
       - name: flake8
-        run: flake githooks setup.py
+        run: flake8 githooks setup.py
       - name: mypy
         run: |
           mypy . || true
