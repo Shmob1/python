@@ -2,12 +2,12 @@
 
 VERSION=$(cat ../.python-version)
 
-# ANSI escape codes 
+# ANSI escape codes
 RED='\033[0;31m'
 BLUE='\033[0;34m'
 NC='\033[0m' # no colour
 ORANGE='\033[0;33m'
-GREEN='\033[0;32m'  
+GREEN='\033[0;32m'
 
 function yn () {
     if [ -z "$1" ]; then
@@ -17,7 +17,7 @@ function yn () {
     echo -en $1
     read -p " (y/n) " yn
     while true; do
-        case $yn in 
+        case $yn in
             [yY] ) return 0;;
             [nN] ) return 1;;
             * ) read -p "Invalid response (y/n) " yn;;
@@ -27,10 +27,10 @@ function yn () {
 
 function add_to_bashrc {
     case "$SHELL" in
-        *"bash" ) 
+        *"bash" )
             rc=~/.bashrc
             touch $rc;;
-        *"zsh" ) 
+        *"zsh" )
             rc=~/.zshrc
             touch $rc;;
         *"fish")
