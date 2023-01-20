@@ -1,14 +1,14 @@
 from logging import getLogger
-
 from pathlib import Path
+
 import click
-import yaml  # type: ignore[import]
 import munch
+import yaml  # type: ignore[import]
 
-from githooks.logger import setup_logging
-import githooks
+import src
+from src.logger import setup_logging
 
-filepath_root = Path(githooks.__file__).parent.parent
+filepath_root = Path(src.__file__).parent.parent
 filepath_params = filepath_root / "params.yaml"
 
 log = getLogger(__name__)

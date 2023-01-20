@@ -8,14 +8,13 @@ PROJECT_URL
 
 Requirements
 ============
-- python3.9
+- python3.10
 - pip
-- pip-tools (developers only)
+- pip-tools or conda
 
 
 DVC Setup Instructions
 ======================
-Initialise DVC and add GCS remote. If you don't have a bucket contact admins@aiml.team.
 
 .. code-block:: bash
 

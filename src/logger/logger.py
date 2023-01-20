@@ -1,8 +1,8 @@
 import logging
 import logging.config
-import yaml  # type: ignore[import]
 from pathlib import Path
 
+import yaml  # type: ignore[import]
 
 filepath_config = Path(__file__).parent / "config.yml"
 filepath_output = Path("logs")
@@ -42,12 +42,3 @@ def set_level_error(*names):
     for name in names:
         logger = logging.getLogger(name)
         logger.setLevel(logging.ERROR)
-
-
-def ensure_exists(p: Path) -> Path:
-    """
-    Helper to ensure a directory exists.
-    """
-    p = Path(p)
-    p.mkdir(parents=True, exist_ok=True)
-    return p

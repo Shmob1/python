@@ -1,27 +1,34 @@
-from logging import getLogger
-
-from typing import Union
 import os
+from logging import getLogger
 from pathlib import Path
+from typing import Union
+
 import requests  # type: ignore[import]
 from tqdm import tqdm
 
 log = getLogger(__name__)
 
 
-def create_folder_safe(fd):
-    if not os.path.exists(fd):
-        os.makedirs(fd)
+def mkdir(*args: Union[str, Path]):
+    """
+    Create folders if they doesn't exist
+    """
+    for fd in args:
+        if not os.path.exists(fd):
+            os.makedirs(fd)
+
+    return args
 
 
-def download_to_file(url: Union[Path, str], out_file: Union[Path, str]):
+def download(url: Union[Path, str], out_file: Union[Path, str]):
+
     if type(url) is Path:
         url = url.as_posix()
 
     if type(out_file) is Path:
         out_file = out_file.as_posix()
 
-    create_folder_safe(os.path.dirname(out_file))
+    mkdir(os.path.dirname(out_file))
     response = requests.get(url, stream=True)  # type: ignore[arg-type]
     size = int(response.headers.get("content-length", 0))
     progress = tqdm(total=size, unit="iB", unit_scale=True)
@@ -34,12 +41,3 @@ def download_to_file(url: Union[Path, str], out_file: Union[Path, str]):
     if os.path.getsize(out_file) != size:
         log.critical("{} is corrupt".format(out_file))
         exit(50)
-
-
-def ensure_exists(p: Path) -> Path:
-    """
-    Helper to ensure a directory exists.
-    """
-    p = Path(p)
-    p.mkdir(parents=True, exist_ok=True)
-    return p

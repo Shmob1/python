@@ -1,6 +1,4 @@
-from setuptools import find_packages
-from setuptools import setup
-
+from setuptools import find_packages, setup
 
 setup(
     name="PROJECT",
@@ -10,4 +8,5 @@ setup(
     description="",
     packages=find_packages(exclude=("tests",)),
     classifiers=["Programming Language :: Python"],
+    entry_points={"console_scripts": ["python-env=src.cli"]},
 )
