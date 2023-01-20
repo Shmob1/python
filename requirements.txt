@@ -4,4 +4,3 @@ munch==2.5.*
 click==8.1.*
 requests==2.28.*
 tqdm==4.64.*
-dvc==2.38.*

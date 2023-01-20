@@ -2,7 +2,7 @@
 PROJECT_NAME
 =============
 
-A Small repo to test the functionality of githooks and github actions
+A project template which includes all setup for a Python 3.10 Data Science project
 
 PROJECT_URL
 
@@ -11,17 +11,6 @@ Requirements
 - python3.10
 - pip
 - pip-tools or conda
-
-
-DVC Setup Instructions
-======================
-
-.. code-block:: bash
-
-  dvc init
-  dvc remote add --default origin gs://mybucket/path/.dvc
-
-Once complete you can remove this section from the README.
 
 
 Installation
